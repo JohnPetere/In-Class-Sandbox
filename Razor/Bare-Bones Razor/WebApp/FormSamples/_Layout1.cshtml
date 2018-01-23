@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>@Page.Title</title>
+        @RenderSection("head", required: false)
+        <h1>Demo Text Input</h1>
+        @{ 
+            String theName = Request["yourName"]; // Will return null or empty
+            if (IsPost)
+            {
+                if (string.IsNullOrEmpty(theName))
+                {
+                    <p>Please enter your name before clicking the button</p>
+                }
+                else
+                {
+                    <p>Greetings <b>@theName</b>and welcome to the CSPC-1517</p>
+                }
+            }
+        }
+    </head>
+    <body>
+        @RenderBody()
+    </body>
+</html>
